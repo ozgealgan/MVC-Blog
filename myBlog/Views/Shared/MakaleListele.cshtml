@@ -1,0 +1,35 @@
+﻿@model IEnumerable<myBlog.Models.Makale>
+
+@{
+    Layout = null;
+}
+
+@foreach (var makale in Model)
+{
+    <article class="post-1 line">
+        <!-- image -->
+        <div class="s-12 l-6 post-image">
+            <a href="/Makale/Detay/@makale.id">
+                @foreach (var r in ViewBag.resim)
+                {
+                    if (r.MakaleID ==makale.id)
+                    {
+                        <img src="">
+                    }
+                }
+            </a>
+        </div>
+        <!-- text -->
+        <div class="s-12 l-5 post-text">
+            <a href="/Makale/Detay/@makale.id">
+                <h2>@makale.Baslik</h2>
+            </a>
+            <p>@makale.Icerik</p>
+        </div>
+        <!-- date -->
+        <div class="s-12 l-1 post-date">
+            <p class="date">@makale.YayınlanmaTarihi.ToString("dd")</p>
+            <p class="month">@makale.YayınlanmaTarihi.ToString("MM")</p>
+        </div>
+    </article>
+}

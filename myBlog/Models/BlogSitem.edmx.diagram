@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9dec52cca9f04d8abe2bb2717f1ac586" Name="Diagram1">
+        <EntityTypeShape EntityType="blogSitemModel.Admin" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogSitemModel.Etiket" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogSitemModel.Kategori" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogSitemModel.Makale" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogSitemModel.Mesaj" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogSitemModel.Resim" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogSitemModel.sysdiagram" Width="1.5" PointX="2.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="blogSitemModel.Yorum" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="blogSitemModel.FK_Admin_Resim" ManuallyRouted="false" />
+        <AssociationConnector Association="blogSitemModel.FK_Makale_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="blogSitemModel.FK_Resim_Makale" ManuallyRouted="false" />
+        <AssociationConnector Association="blogSitemModel.FK_Yorum_Makale" ManuallyRouted="false" />
+        <AssociationConnector Association="blogSitemModel.EtiketMakale" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

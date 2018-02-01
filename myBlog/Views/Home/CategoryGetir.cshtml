@@ -1,0 +1,19 @@
+﻿@model IEnumerable<myBlog.Models.Kategori>
+
+@{ 
+    Layout = null;
+}
+
+        <!-- NEWS 1 -->
+        
+        <div class="aside-block margin-bottom">
+            <img src="/Content/img/news1.jpg" alt="News 1">
+            <h3>Kategoriler</h3>
+            <ul>
+                @foreach (var kat in Model)
+                {
+                    <li><a href="/Kategori/Index/@kat.id">@kat.Adi (@kat.Makales.Count())</a></li>
+                }
+            </ul>
+    
+</div>

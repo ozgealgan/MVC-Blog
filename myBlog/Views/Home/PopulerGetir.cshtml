@@ -1,0 +1,18 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="aside-block margin-bottom">
+    <img src="/Content/img/news2.jpg" alt="News 2">
+    <h4>Popüler Makaleler</h4>
+    <div>
+        <ul>
+            @foreach (var pop in ViewBag.Populer)
+            {
+
+                <li><a href="/Makale/Detay/@pop.id"><h5>@pop.Baslik</h5></a></li>
+                <li><p>@pop.Icerik.Substring(0, 2);</p></li>}
+        </ul>
+
+    </div>
+</div>

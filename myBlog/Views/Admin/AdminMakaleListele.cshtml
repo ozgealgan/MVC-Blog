@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "AdminMakaleListele";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model IEnumerable<myBlog.Models.Makale>
+
+
+<h2>Makale Listele</h2>
+
+<p>
+    @Html.ActionLink("Yeni Makale", "MakaleOlustur")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Baslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Icerik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YayınlanmaTarihi)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Baslik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Icerik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YayınlanmaTarihi)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.MakaleId */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Sil", "MakaleSil", new { id=item.id})
+            </td>
+        </tr>
+    }
+
+</table>
+
+

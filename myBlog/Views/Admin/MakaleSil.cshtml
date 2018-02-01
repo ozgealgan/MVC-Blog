@@ -1,0 +1,73 @@
+﻿@model myBlog.Models.Makale
+
+@{
+    ViewBag.Title = "MakalesSil";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>MakalesSil</h2>
+
+<h3>Silmek istediğinizden emin misiniz?</h3>
+<div>
+    <h4>Makale</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Baslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Icerik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YayınlanmaTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YayınlanmaTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Begeni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Begeni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Goruntulenme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Goruntulenme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategori.Adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategori.Adi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

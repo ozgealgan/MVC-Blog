@@ -1,0 +1,14 @@
+﻿@model myBlog.Models.Admin
+@{
+    ViewBag.Title = "Hakkimda";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<article class="margin-bottom">
+    <!-- text -->
+    <div class="post-text">
+        <h1>@ViewBag.hakkimda.baslik</h1>
+        <img src="img/post3-big.jpg" alt="Fashion">
+        <p>@ViewBag.hakkimda.aciklama</p>
+     </div>
+</article>

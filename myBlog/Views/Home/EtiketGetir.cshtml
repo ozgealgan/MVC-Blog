@@ -1,0 +1,15 @@
+﻿@model IEnumerable<myBlog.Models.Etiket>
+    @{ 
+        Layout = null;
+     }
+<div class="aside-block margin-bottom">
+    
+    <h3>Etiketler</h3>
+    <ul>
+        @foreach (var tag in Model)
+            {
+                <li><a href="/Etiket/Index/@tag.id">@tag.Adi (@tag.Makales.Count)</a></li>
+            }
+       
+    </ul>
+</div>

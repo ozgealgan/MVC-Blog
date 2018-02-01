@@ -1,0 +1,59 @@
+﻿@model myBlog.Models.Mesaj
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        $("#gonder").click(function () {
+            var mail = $("#mail").val();
+            var name = $("#name").val();
+            var mesaj = $("#mesaj").val();
+            $.ajax({
+                url: "/Iletisim/MesajGonder/",
+                data: { mail: mail, name: name, mesaj: mesaj },
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    alert("Mesajınız Gönderildi..");
+                }
+            });
+        });
+    });
+</script>
+<article class="margin-bottom">
+    <!-- text -->
+    <div class="post-text">
+        <div class="line">
+            <div class="margin">
+                <div class="s-12 l-6">
+                    <address>
+                        <p><i class="icon-home icon"></i> iZMİR</p>
+                        <p><i class="fa fa-university fa-3x" aria-hidden="true"></i>MANİSA - Turgutlu </p>
+                        <p><i class="icon-mail icon"></i> ozgealgn1@gmail.com</p>
+                    </address>
+                    <br />
+                    <h4>Social</h4>
+                    <p><img src="~/Content/img/face.jpg"></img> <a href="https://www.facebook.com/ozge.algan.73">Özge Algan </a></p>
+
+                    <p class="margin-bottom"><img src="~/Content/img/twitter-icon.png"></img> <a href="https://twitter.com/algnozge">Özge Algan</a></p>
+                    <p><img src="~/Content/img/in.png"></img> <a href="https://www.linkedin.com/in/%C3%B6zge-algan-238985116/">Özge Algan</a></p>
+                    <p><img src="~/Content/img/git"></img> <a href="https://github.com/ozgealgan">Özge Algan</a></p>
+                </div>
+                <div class="s-12 l-6">
+                    <form class="customform" action="">
+                        <div class="s-12"><input name="" id="mail" placeholder="Your e-mail" title="Your e-mail" type="text" /></div>
+                        <div class="s-12"><input name="" id="name" placeholder="Your name" title="Your name" type="text" /></div>
+                        <div class="s-12"><textarea id="mesaj" placeholder="Your massage" name="" rows="5"></textarea></div>
+                        <button type="submit" id="gonder">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MAP -->
+    <div id="map-block">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d682251.1123056135!2d17.063451638281247!3d48.09010461740988!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8cbf758ecb9f%3A0xddeb1d26bce5eccf!2sGallayova+2150%2F19%2C+841+02+D%C3%BAbravka%2C+Slovensk%C3%A1+republika!5e0!3m2!1ssk!2s!4v1412519122400" width="100%" height="450" frameborder="0" style="border:0"></iframe>
+    </div>
+</article>
+

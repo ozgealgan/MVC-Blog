@@ -1,0 +1,80 @@
+﻿@model myBlog.Models.Makale
+@{
+    ViewBag.Title = "Detay";
+}
+
+
+<div class="s-12 l-9">
+    <!-- ARTICLE 1 -->
+    <article class="margin-bottom" >
+        <div class="post-1 line">
+            <!-- image -->
+            <div class="s-12 l-11 post-image">
+              
+                    <img src="" alt="">
+            </div>
+            <!-- date -->
+            <div class="s-12 l-1 post-date">
+                <p class="date">@Model.YayınlanmaTarihi.ToString("dd")</p>
+                <p class="month">@Model.YayınlanmaTarihi.ToString("MM")</p>
+            </div>
+        </div>
+        <!-- text -->
+        <div class="post-text" style="background-color:white">
+            <h1>@Model.Baslik</h1>
+            <p style="color:black">@Model.Icerik </p>
+           
+        </div>
+
+        <div style="background-color:white">
+            <h4>Yorumlar</h4>
+            <form class="customform" action="">
+                @foreach (var y in Model.Yorums.ToList())
+                {
+                    <div class="well">
+                        <label style="color:black">@y.YorumYapanAdi</label>
+                        <textarea type="text">@y.YorumIcerik</textarea>
+                        <small style="color:black">@y.Tarih</small>
+                    </div>
+                    <p><a href="#">Yanıtla</a></p>}
+            </form>
+                
+        </div>
+
+        <div class="s-12 l-6" style="background-color:white"> 
+            <form class="customform" action="">
+                <div class="s-12"><input name="" placeholder="Your e-mail" title="Your e-mail" type="text" id="kulMail" /></div>
+                <div class="s-12"><input name="" placeholder="Your name" title="Your name" type="text" id="kulAdi" /></div>
+                <div class="s-12"><textarea placeholder="Your massage" typeof="text" id="yorum" rows="5"></textarea></div>
+                <button type="submit" id="gonder">Gönder</button>
+            </form>
+        </div>
+    </article>
+    <!-- AD REGION -->
+    <div class="line">
+        <div class="advertising horizontal">
+            <img src="/Content/img/banner-horizontal.jpg" alt="ad banner">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#gonder").click(function () {
+            var yorum = $("#yorum").val();
+            var kulAdi = $("#kulAdi").val();
+            var kulMail = $("#kulMail").val();
+
+            $.ajax({
+                url: '/Makale/YorumYap/',
+                data: { icerik:yorum, kulAdi:kulAdi , kulMail:kulMail, makaleId:@Model.id},
+                type: 'POST',
+                dataType: 'json',
+                success: function(data){
+                    alert("Yorumunuz Gönderildi..");
+                }
+            });
+        });
+    });
+</script>
+

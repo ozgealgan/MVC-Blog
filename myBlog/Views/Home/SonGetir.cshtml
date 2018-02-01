@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="aside-block margin-bottom">
+    <img src="/Content/img/news2.jpg" alt="News 2">
+    <h4>Son Makaleler</h4>
+    <div>
+        <ul>
+            @foreach (var son in ViewBag.SonGonderi)
+            {
+
+                <li><a href="/Makale/Detay/@son.id"><h5>@son.Baslik</h5></a></li>
+                <li><p>@son.Icerik.Substring(0, 2);</p></li>}
+        </ul>
+    </div>
+</div>
